@@ -342,7 +342,7 @@ searchItem = () => {
 
     if (itemCode && itemType) {
         console.log("Searching for item...");
-        
+
         // Call checkItem to determine if the item exists
         if (checkItem(itemCode, itemType)) {
             console.log("Item found:", itemCode);
@@ -352,13 +352,13 @@ searchItem = () => {
     } else {
         console.log("Please enter both Item Code and Item Type.");
     }
-    
+
 }
 
 checkItem = (itemcode, itemType) => {
     switch (itemType) {
         case "Burgers":
-            return burgersItem.some(e =>{e.itemCode === itemcode});
+            return burgersItem.some(e => { e.itemCode === itemcode });
         case "Submarines":
             return submarines.some(e => e.itemCode === itemcode);
         case "Fries":
