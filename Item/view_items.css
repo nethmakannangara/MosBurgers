@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Klee+One&display=swap');
+
+.title_mos_bugers {
+    font-family: "Calligraffitti", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 70px;
+}
+
+.title_view_items {
+    font-family: "Klee One", cursive;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 38px;
+}
+
+.item_button{
+    margin-bottom: 3px;
+    padding: 6px 12px 6px 12px;
+    background-color: rgb(55, 89, 228);
+    cursor: pointer;
+}
+
+.hr-1{
+    width: 80%;
+    margin: auto;
+    color: #1b263b;
+}
+
+.item_table_box{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 70%;
+    background-color: #575757;
+    justify-items: center;
+    border-radius: 0.7rem;
+    max-height: 400px;
+    overflow: scroll;
+}
+
+.item_table{
+    width: 100%;
+}
+
+#item_table_header{
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 19px;
+    padding: 5px;
+    color: #E5E5E5;
+}
+
+#item_table_details,
+#item_table_details_col4 {
+    font-family: "Varela Round", sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    padding: 12px;
+    color: #E5E5E5;
+}
+
+#item_table_details_col4{
+    color: #00c4aa;
+}
+
+.edit_dialog_box{
+    display: none;
+    width: 80%;
+    position: fixed;
+    top: 30%;
+    left: 10%;
+    margin: auto;
+    border-radius: 0.5rem;
+    z-index: 1;
+    background-color: aqua;
+}
+
+.edit_dialog_box label{
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    /* color: #E5E5E5; */
+}
+
+.lbl_edit_order_details{
+    font-size: 30px;
+}
+
+.lbl_edit_order_details{
+    font-size: 25px;
+}
+
+.input_area{
+    background-color: #E5E5E5;
+    width: 40%;
+    margin: auto;
+}
+
+.input_area label{
+    margin-left: 5%;
+}
+
+.input_area input{
+    width: 65%;
+    margin-left: 15%;
+    border: none;
+    outline: none;
+    margin-bottom: 5px;    
+}
