@@ -121,6 +121,7 @@ searchCustomer = () => {
 checkDetails = (no) => {
     customer.forEach(element => {
         if (element.teleNO === no) {
+
             return true;
         }
     });
