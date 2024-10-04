@@ -21,7 +21,9 @@
     margin-bottom: 3px;
     padding: 6px 12px 6px 12px;
     background-color: rgb(55, 89, 228);
+    border-radius: 0.2rem;
     cursor: pointer;
+    color: #E5E5E5;
 }
 
 .hr-1 {
@@ -32,6 +34,7 @@
 
 .item_table_box {
     display: flex;
+    height: 400px;
     justify-content: center;
     margin: auto;
     width: 70%;
@@ -45,8 +48,8 @@
 .edit_dialog_box {
     display: none;
     width: 80%;
-    position: fixed;
-    top: 30%;
+    position: absolute;
+    top: 50%;
     left: 10%;
     margin: auto;
     border-radius: 0.5rem;
@@ -58,6 +61,28 @@
 #item_type {
     border: none;
     outline: none;
+}
+
+#item_table_header{
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 19px;
+    padding: 5px;
+    color: #E5E5E5;
+}
+
+#item_table_details,
+#item_table_details_col4{
+    font-family: "Varela Round", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    padding: 12px;
+    color: #E5E5E5;
+}
+
+#item_table_details_col4{
+    color: #80ed99;
 }
 
 .lbl_edit_order_details,
@@ -91,4 +116,27 @@
     border: none;
     outline: none;
     margin-bottom: 5px;
+}
+
+.message_box,
+.message_box_2{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 10%;
+    margin: auto;
+    align-content: center;
+    height: 100px;
+    border-radius: 0.8rem;
+    background-color:hsla(0, 0%, 19%, 0.9);
+    z-index: 1;
+}
+
+.message-body p,
+.message_box_2 p{
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    color: #E5E5E5;
+    font-size: 25px;
 }

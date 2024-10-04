@@ -1,5 +1,3 @@
-console.log("Place Order");
-
 let customerID = 6;
 let orderID = 5;
 let total = 0.00;
@@ -92,9 +90,7 @@ clearTxtFiled = () => {
 
 searchCustomer = () => {
     let telephoneNO = document.getElementById("telephone-no").value;
-    let index = -1;
-
-    console.log(telephoneNO.length);
+    let index ;
 
     if (telephoneNO.length != 0) {
         index = getIndex(telephoneNO);
@@ -104,8 +100,6 @@ searchCustomer = () => {
 
 
     if (index != -1) {
-        document.getElementById("telephone-no").disabled = true;
-
         document.getElementById("id-details").value = customer[index].id;
         document.getElementById("name-details").value = customer[index].name;
         document.getElementById("address-details").value = customer[index].address;
@@ -127,7 +121,6 @@ searchCustomer = () => {
 checkDetails = (no) => {
     customer.forEach(element => {
         if (element.teleNO === no) {
-            console.log(element.teleNO === no);
             return true;
         }
     });
@@ -168,11 +161,11 @@ cancelBTN = () => {
     disabledTxtFiled();
 }
 
-window.onclick = function (event) {
-    if (event.target == document.getElementById("message_box")) {
-        document.getElementById("message_box").style.display = "none";
-    }
-}
+// window.onclick = function (event) {
+//     if (event.target == document.getElementById("message_box")) {
+//         document.getElementById("message_box").style.display = "none";
+//     }
+// }
 
 /*-------------------------------------------------------------------------- */
 

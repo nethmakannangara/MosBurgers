@@ -330,29 +330,76 @@ loadTable = (num) => {
 
 editItemDetails = () => {
     document.getElementById("edit_dialog_box").style.display = "block";
+
+    document.getElementById("btnAdd").disable = false;
+    document.getElementById("btnDelate").disable = false;
 }
 
 closeWindow = () => {
     document.getElementById("edit_dialog_box").style.display = "none";
+
+    document.getElementById("itemID").value = null;
+    document.getElementById("item_type").value = null;
+    document.getElementById("txt_item_description").value = null;
+    document.getElementById("txt_item_Price").value = null;
+    document.getElementById("txt_item_discount").value = null;
+    
 }
 
 searchItem = () => {
     let itemCode = document.getElementById("itemID").value;
     let itemType = document.getElementById("item_type").value;
 
-    if (itemCode && itemType) {
-        console.log("Searching for item...");
+    let itemIndex;
 
-        // Call checkItem to determine if the item exists
-        if (checkItem(itemCode, itemType)) {
-            console.log("Item found:", itemCode);
-        } else {
-            console.log("Item not found.");
+    if(itemType.length == 0){
+        alert("Please Input Item type");
+    }else{
+        switch (itemType) {
+            case "Burgers":
+                itemIndex = getIndex(burgersItem, itemCode);
+                setItem(itemIndex, burgersItem);
+                break;
+            case "Submarines":
+                itemIndex = getIndex(submarines, itemCode);
+                setItem(itemIndex, submarines);
+            case "Fries":
+                getIndex(Fries, itemCode);
+                setItem(itemIndex, Fries);
+            case "Pasta":
+                itemIndex = getIndex(pastaItem, itemCode);
+                setItem(itemIndex, pastaItem);
+            case "Chicken":
+                itemIndex = getIndex(chickenItem, itemCode);
+                setItem(itemIndex, chickenItem);
+            case "Beverages":
+                itemIndex = getIndex(beveragesItem, itemCode);
+                setItem(itemIndex, beveragesItem);
         }
-    } else {
-        console.log("Please enter both Item Code and Item Type.");
     }
+}
 
+setItem = (itemIndex, list) => {
+    if (itemIndex != -1) {
+        let itemName = document.getElementById("txt_item_description").value = list[itemIndex].itemName;
+        let price = document.getElementById("txt_item_Price").value = list[itemIndex].price;
+        let discont = document.getElementById("txt_item_discount").value = list[itemIndex].discont;
+
+        document.getElementById("btnAdd").disable = true;
+    }else{
+        document.getElementById("message_box").style.display = "block";
+        document.getElementById("btnDelate").disable = true;
+    }    
+}
+
+/* get item details */
+getIndex = (list, itemCode) => {
+    for (let i = 0; i < list.length; i++) {
+        if (list[i].itemCode === itemCode) {
+            return i;
+        }
+    }
+    return -1;
 }
 
 checkItem = (itemcode, itemType) => {
@@ -374,7 +421,54 @@ checkItem = (itemcode, itemType) => {
     }
 }
 
+addItems = () => {
+    let itemCode = document.getElementById("itemID").value;
+    let type = document.getElementById("item_type").value;
+    let itemName = document.getElementById("txt_item_description").value;
+    let price = document.getElementById("txt_item_Price").value;
+    let discont = document.getElementById("txt_item_discount").value;
 
-setItemTable(submarines);
+    const temp = { itemCode, itemName, price, discont }
+    console.log(temp);
+
+    switch (type) {
+        case "Burgers":
+            burgersItem.push(temp);
+            loadTable(1);
+            break;
+        case "Submarines":
+            submarines.push(temp);
+            loadTable(2);
+            break;
+        case "Fries":
+            Fries.push(temp);
+            loadTable(3);
+            break;
+        case "Pasta":
+            pastaItem.push(temp);
+            loadTable(4);
+            break;
+        case "Chicken":
+            chickenItem.push(temp);
+            loadTable(5);
+            break
+        case "Beverages":
+            beveragesItem.push(temp);
+            loadTable(6);
+            break;
+    }
+}
+
+cancelBTN = () => {
+    document.getElementById("message_box").style.display = "none";
+
+    document.getElementById("item_type").value = null;
+    document.getElementById("txt_item_description").value = null;
+    document.getElementById("txt_item_Price").value = null;
+    document.getElementById("txt_item_discount").value = null;
+
+    disabledTxtFiled();
+}
 
 
+setItemTable(burgersItem);
