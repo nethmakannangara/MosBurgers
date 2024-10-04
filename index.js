@@ -31,7 +31,7 @@ checkAdminDetails =() =>{
 
         if (tempDetails.userName === inputAdminName && tempDetails.password === inputAdminPassword) {
             document.getElementById("login_error_message").style.display = "none";
-            window.open("/User/admin_page.html","_self")
+            window.open("User/admin_page.html","_self")
         }else{
             document.getElementById("login_error_message").style.display = "block";
             document.getElementById("txt_admin_password").value = null;
@@ -49,7 +49,7 @@ checkUserInputDetails =() =>{
 
         if (tempDetails.userName === inputUserName && tempDetails.password === inputUserPassword) {
             document.getElementById("login_error_message").style.display = "none";
-            window.open("/User/user_page.html","_self")
+            window.open("User/user_page.html","_self")
         }else{
             document.getElementById("user_login_error_message").style.display = "block";
             document.getElementById("txt_user_password").value = null;
@@ -57,7 +57,7 @@ checkUserInputDetails =() =>{
     }  
 }
 
-//alert("ADMIN- -> UserName : admin  Password : admin1234 /n USER - > UserName : user  Password : user1234" );
+alert("ADMIN- -> UserName : admin  Password : admin1234 /n USER - > UserName : user  Password : user1234" );
 
 //--------Add data to localstorage------------//
 
